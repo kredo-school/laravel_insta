@@ -109,10 +109,10 @@ class PostController extends Controller
         // if there is a new image...
         if ($request->image){
             # Delete the previous image from the local storage
-            $this->deleteImage($post->image);
+            $post->image = 'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
 
             # Move the new image to the local storage
-            $post->image = $this->saveImage($request);
+            // $post->image = $this->saveImage($request);
         }
 
         $post->save();
@@ -130,16 +130,16 @@ class PostController extends Controller
         return redirect()->route('post.show', $id);
     }
 
-    private function deleteImage($image_name)
-    {
-        $image_path = self::LOCAL_STORAGE_FOLDER . $image_name;
-        // $image_path = 'public/images/1651749056.jpg;'
+    // private function deleteImage($image_name)
+    // {
+    //     $image_path = self::LOCAL_STORAGE_FOLDER . $image_name;
+    //     // $image_path = 'public/images/1651749056.jpg;'
 
-        # If the image is existing, delete
-        if (Storage::disk('local')->exists($image_path)){
-            Storage::disk('local')->delete($image_path);
-        }
-    }
+    //     # If the image is existing, delete
+    //     if (Storage::disk('local')->exists($image_path)){
+    //         Storage::disk('local')->delete($image_path);
+    //     }
+    // }
 
     public function destroy($id)
     {   
