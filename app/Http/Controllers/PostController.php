@@ -38,7 +38,7 @@ class PostController extends Controller
         # Save the post
         $this->post->user_id = Auth::user()->id;
         $this->post->description = $request->description;
-        $this->post->image = $this->saveImage($request);
+        $this->post->image = 'data:image/' . $request->image->extension() . ';base64,' . base64_encode(file_get_contents($request->image));
         $this->post->save();
 
         # Save the category to the category_post pivot table
@@ -51,17 +51,19 @@ class PostController extends Controller
         return redirect()->route('index');
     }
 
-    private function saveImage($request)
-    {
-        # Rename the image to the CURRENT TIME to avoid overwriting
-        $image_name = time() . "." . $request->image->extension();
-        //$image_name = '16823621234.jpeg';
+    // private function saveImage($request)
+    // {
+    //     # Rename the image to the CURRENT TIME to avoid overwriting
+    //     $image_name = time() . "." . $request->image->extension();
+    //     //$image_name = '16823621234.jpeg';
 
-        # Save the image inside storage/app/public/images/
-        $request->image->storeAs(self::LOCAL_STORAGE_FOLDER, $image_name);
+    //     # Save the image inside storage/app/public/images/
+    //     $request->image->storeAs(self::LOCAL_STORAGE_FOLDER, $image_name);
 
-        return $image_name;
-    }
+    //     $this->post->image = 
+
+    //     return $image_name;
+    // }
 
     public function show($id)
     {

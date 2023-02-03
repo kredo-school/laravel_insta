@@ -77,7 +77,7 @@
                             <li class="nav-item dropdown">
                                 <button class="btn shadow-none nav-link" id="account-dropdown" data-bs-toggle="dropdown">
                                     @if (Auth::user()->avatar)
-                                    <img src="{{ asset('storage/avatars/' . Auth::user()->avatar) }}" alt="{{ Auth::user()->avatar }}" class="rounded-circle nav-avatar">
+                                    <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->avatar }}" class="rounded-circle nav-avatar">
                                     @else
                                     <i class="fa-solid fa-circle-user text-dark nav-icon"></i>
                                     @endif

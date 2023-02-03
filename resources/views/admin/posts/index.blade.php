@@ -34,7 +34,7 @@
             <tr>
                 <td class="text-end">{{ $post->id }}</td>
                 <td>
-                <a href="{{ route('post.show' , $post->id) }}"><img src="{{ asset('storage/images/' . $post->image) }}" alt="{{ $post->image }}" class="d-block mx-auto admin-posts-img"></a>
+                <a href="{{ route('post.show' , $post->id) }}"><img src="{{ $post->image }}" alt="{{ $post->image }}" class="d-block mx-auto admin-posts-img"></a>
                 </td>
                 <td>
                     @if($post->categoryPost->count() == 0)

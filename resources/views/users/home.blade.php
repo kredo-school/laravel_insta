@@ -39,7 +39,7 @@
             <div class="col-auto">
                 <a href="{{ route('profile.show', Auth::user()->id) }}" class="text-secondary">
                     @if(Auth::user()->avatar)
-                    <img src="{{ asset('/storage/avatars/' . Auth::user()->avatar) }}" alt="{{ Auth::user()->avatar }}" class="rounded-circle overview-avatar">
+                    <img src="{{ Auth::user()->avatar }}" alt="{{ Auth::user()->avatar }}" class="rounded-circle overview-avatar">
                     @else
                     <i class="fa-solid fa-circle-user overview-icon"></i>
                     @endif

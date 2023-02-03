@@ -3,7 +3,7 @@
         <div class="col-auto">
             <a href="{{ route('profile.show', $post->user->id) }}" class="text-secondary">
                 @if($post->user->avatar)
-                <img src="{{ asset('storage/avatars/' . $post->user->avatar) }}" alt="{{ $post->user->avatar }}" class="rounded-circle user-avatar">
+                <img src="{{ $post->user->avatar }}" alt="{{ $post->user->avatar }}" class="rounded-circle user-avatar">
                 @else
                 <i class="fa-solid fa-circle-user user-icon"></i>
                 @endif
@@ -53,7 +53,7 @@
             <div class="modal-body">
                 <p>Are you sure you want to delete this post?</p>
                 <div class="mt-3">
-                    <img src="{{ asset('/storage/images/' . $post->image) }}" alt="{{ $post->image }}" class="delete-post-img">
+                    <img src="{{ $post->image }}" alt="{{ $post->image }}" class="delete-post-img">
                     <p class="mt-1 text-muted">{{ $post->description }}</p>
                 </div>
             </div>

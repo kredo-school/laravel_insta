@@ -37,7 +37,7 @@
 
     <div class="row mb-3">
         <div class="col-6">
-            <img src="{{ asset('/storage/images/' . $post->image) }}" alt="{{ $post->image }}" class="img-thumbnail w-100">
+            <img src="{{ $post->image }}" alt="{{ $post->image }}" class="img-thumbnail w-100">
             <input type="file" name="image" class="form-control mt-1">
             @error('image')
                 <p class="text-danger small">{{ $message }}</p>

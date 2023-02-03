@@ -15,7 +15,7 @@
                             <div class="col-auto">
                                 <a href="{{ route('profile.show', $like->user->id) }}">
                                     @if($like->user->avatar)
-                                        <img src="{{ asset('/storage/avatars/' . $like->user->avatar) }}" alt="{{ $like->user->avatar }}" class="rounded-circle user-avatar">
+                                        <img src="{{ $like->user->avatar }}" alt="{{ $like->user->avatar }}" class="rounded-circle user-avatar">
                                     @else
                                         <i class="fa-solid fa-circle-user text-secondary user-icon"></i>
                                     @endif
@@ -65,7 +65,7 @@
                             <div class="col-auto">
                                 <a href="{{ route('profile.show', $like->user->id) }}">
                                     @if($like->user->avatar)
-                                        <img src="{{ asset('/storage/avatars/' . $like->user->avatar) }}" alt="{{ $like->user->avatar }}" class="rounded-circle user-avatar">
+                                        <img src="{{ $like->user->avatar }}" alt="{{ $like->user->avatar }}" class="rounded-circle user-avatar">
                                     @else
                                         <i class="fa-solid fa-circle-user text-secondary user-icon"></i>
                                     @endif

@@ -12,7 +12,7 @@
         <div class="col-auto">
             @if($user->avatar)
             <a href="{{ route('profile.show', $user->id) }}">
-                <img src="{{ asset('/storage/avatars/' . $user->avatar) }}" alt="{{ $user->avatar }}" class="rounded-circle user-avatar">
+                <img src="{{ $user->avatar }}" alt="{{ $user->avatar }}" class="rounded-circle user-avatar">
             </a>
             @else
             <a href="{{ route('profile.show', $user->id) }}">

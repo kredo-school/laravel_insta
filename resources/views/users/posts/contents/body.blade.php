@@ -1,7 +1,7 @@
 <!-- Clickable post image -->
 <div class="container p-0">
     <a href="{{ route('post.show', $post->id) }}">
-        <img src="{{ asset('/storage/images/' .$post->image) }}" alt="{{ $post->image }}" class="w-100">
+        <img src="{{ $post->image }}" alt="{{ $post->image }}" class="w-100">
     </a>
 </div>
 <div class="card-body">

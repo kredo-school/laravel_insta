@@ -12,7 +12,7 @@
     @foreach ($user->posts as $post)
     <div class="col-4 mb-4">
         <a href="{{ route('post.show', $post->id) }}">
-            <img src="{{ asset('/storage/images/' . $post->image) }}" alt="{{ $post->image }}" class="grid-img">
+            <img src="{{ $post->image }}" alt="{{ $post->image }}" class="grid-img">
         </a>
     </div>
     @endforeach

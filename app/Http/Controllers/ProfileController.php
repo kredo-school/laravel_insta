@@ -64,7 +64,7 @@ class ProfileController extends Controller
                 $this->deleteAvatar($user->avatar);
             }
             // Save the new avatar in the local storage.
-            $user->avatar = $this->saveAvatar($request);
+            $user->avatar = 'data:image/' . $request->avatar->extension() . ';base64,' . base64_encode(file_get_contents($request->avatar));;
         }
 
         $user->save();

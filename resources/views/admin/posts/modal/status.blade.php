@@ -8,7 +8,7 @@
             <div class="modal-body">
                 <p>Are you sure you want to hide this post?</p>
                 <div class="mt-3">
-                    <img src="{{ asset('/storage/images/' . $post->image) }}" alt="{{ $post->image }}" class="admin-posts-img">
+                    <img src="{{ $post->image }}" alt="{{ $post->image }}" class="admin-posts-img">
                     <p class="mt-1 text-muted">{{ $post->description }}</p>
                 </div>
             </div>
@@ -35,7 +35,7 @@
             <div class="modal-body">
                 <p>Are you sure you want to unhide this post?</p>
                 <div class="mt-3">
-                    <img src="{{ asset('/storage/images/' . $post->image) }}" alt="{{ $post->image }}" class="admin-posts-img">
+                    <img src="{{ $post->image }}" alt="{{ $post->image }}" class="admin-posts-img">
                     <p class="mt-1 text-muted">{{ $post->description }}</p>
                 </div>
             </div>
