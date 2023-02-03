@@ -1,7 +1,7 @@
 <div class="row">
     <div class="col-4">
-        @if(Auth::user()->avatar)
-        <img src="{{ Auth::user()->avatar }}" alt="{{ $user->avatar }}" class="img-thumbnail rounded-circle d-block mx-auto profile-avatar">
+        @if($user->avatar)
+        <img src="{{ $user->avatar }}" alt="{{ $user->avatar }}" class="img-thumbnail rounded-circle d-block mx-auto profile-avatar">
         @else
         <i class="fa-solid fa-circle-user text-secondary d-block text-center profile-icon"></i>
         @endif
